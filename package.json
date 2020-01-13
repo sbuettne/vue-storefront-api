@@ -8,8 +8,8 @@
     "node": ">=10.x"
   },
   "scripts": {
-    "dev": "nodemon",
-    "dev:inspect": "nodemon --exec \"node --inspect -r ts-node/register src\"",
+    "dev": "NODE_TLS_REJECT_UNAUTHORIZED=0 & nodemon",
+    "dev:inspect": "nodemon --exec \"node --inspect -r graphql-import-node/register -r ts-node/register src\"",
     "build": "npm run -s build:code && npm run -s build:copy:graphql && npm run -s build:copy:schema",
     "build:code": "tsc --build",
     "build:copy:graphql": "cpx src/**/*.graphqls dist",
@@ -70,6 +70,7 @@
     "express": "^4.16.3",
     "fs-extra": "^8.1.0",
     "graphql": "^0.13.1",
+    "graphql-import-node": "^0.0.4",
     "graphql-tools": "^1.2.1",
     "humps": "^1.1.0",
     "js-sha3": "^0.8.0",
@@ -136,6 +137,7 @@
   ],
   "workspaces": [
     "src/api/extensions/*",
-    "src/platform/*"
+    "src/platform/*",
+    "src/api/extensions/coremedia"
   ]
 }

@@ -1,0 +1,12 @@
+query Banner ($contentId: String!) {
+  content {
+    content(id: $contentId) {
+      type
+      name
+      ... on CMTeasable {
+        teaserTitle
+        teaserText
+      }
+    }
+  }
+}

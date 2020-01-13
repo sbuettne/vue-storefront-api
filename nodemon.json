@@ -1,8 +1,8 @@
 {
   "verbose": true,
   "debug": false,
-  "exec": "ts-node src",
+  "exec": "ts-node --require graphql-import-node/register src",
   "watch": ["./src"],
-  "ext": "ts, js",
+  "ext": "ts, js, gql, graphql",
   "inspect": true
 }

@@ -1,0 +1,13 @@
+{
+  "name": "coremedia",
+  "version": "1.0.0",
+  "private": true,
+  "description": "CoreMedia API extension for vue-storefront API and data services",
+  "dependencies": {
+    "apollo-boost": "^0.4.4",
+    "apollo-cache": "^1.3.4",
+    "cross-fetch": "^3.0.4",
+    "graphql": "^14.5.7",
+    "graphql-tag": "^2.10.1"
+  }
+}

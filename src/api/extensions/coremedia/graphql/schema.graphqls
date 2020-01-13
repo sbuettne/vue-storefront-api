@@ -1,0 +1,1966 @@
+# This file was generated based on ".graphqlconfig". Do not edit manually.
+
+schema {
+  query: Query
+}
+
+interface CMAbstractCategory {
+  authors: [CMTeasable]
+  children: [CMLinkable]
+  context: CMNavigation
+  creationDate: String!
+  detailText(view: String): String
+  detailTextAsTree(view: String): RichTextTree
+  externalId: String
+  footer: [CMLinkable]
+  grid: PageGrid
+  header: [CMLinkable]
+  hidden: Boolean
+  hiddenInSitemap: Boolean
+  ignoreUpdates: Int
+  languageId: String
+  link: Link
+  media: [CMMedia]
+  modificationDate: String!
+  name: String!
+  navigationPath: [CMLinkable]
+  picture: CMPicture
+  pictures: [CMPicture]
+  related: [CMTeasable]
+  segment: String
+  teaserOverlaySettings: TeaserOverlaySettings
+  teaserTarget: CMLinkable
+  teaserTargets: [ExtendedTeaserTarget]
+  teaserText(view: String): String
+  teaserTitle: String
+  title: String
+  type: String!
+  validFrom: String
+  validTo: String
+  video: CMVideo
+  videos: [CMVideo]
+  viewtype: String
+}
+
+interface CMArticle {
+  authors: [CMTeasable]
+  context: CMNavigation
+  creationDate: String!
+  detailText(view: String): String
+  detailTextAsTree(view: String): RichTextTree
+  ignoreUpdates: Int
+  languageId: String
+  link: Link
+  media: [CMMedia]
+  modificationDate: String!
+  name: String!
+  navigationPath: [CMLinkable]
+  picture: CMPicture
+  pictures: [CMPicture]
+  related: [CMTeasable]
+  segment: String
+  teaserOverlaySettings: TeaserOverlaySettings
+  teaserTarget: CMLinkable
+  teaserTargets: [ExtendedTeaserTarget]
+  teaserText(view: String): String
+  teaserTitle: String
+  title: String
+  type: String!
+  validFrom: String
+  validTo: String
+  video: CMVideo
+  videos: [CMVideo]
+  viewtype: String
+}
+
+interface CMChannel {
+  authors: [CMTeasable]
+  children: [CMLinkable]
+  context: CMNavigation
+  creationDate: String!
+  detailText(view: String): String
+  detailTextAsTree(view: String): RichTextTree
+  footer: [CMLinkable]
+  grid: PageGrid
+  header: [CMLinkable]
+  hidden: Boolean
+  hiddenInSitemap: Boolean
+  ignoreUpdates: Int
+  languageId: String
+  link: Link
+  media: [CMMedia]
+  modificationDate: String!
+  name: String!
+  navigationPath: [CMLinkable]
+  picture: CMPicture
+  pictures: [CMPicture]
+  related: [CMTeasable]
+  segment: String
+  teaserOverlaySettings: TeaserOverlaySettings
+  teaserTarget: CMLinkable
+  teaserTargets: [ExtendedTeaserTarget]
+  teaserText(view: String): String
+  teaserTitle: String
+  title: String
+  type: String!
+  validFrom: String
+  validTo: String
+  video: CMVideo
+  videos: [CMVideo]
+  viewtype: String
+}
+
+interface CMCollection {
+  authors: [CMTeasable]
+  context: CMNavigation
+  creationDate: String!
+  detailText(view: String): String
+  detailTextAsTree(view: String): RichTextTree
+  ignoreUpdates: Int
+  items: [CMTeasable]
+  languageId: String
+  link: Link
+  media: [CMMedia]
+  modificationDate: String!
+  name: String!
+  navigationPath: [CMLinkable]
+  picture: CMPicture
+  pictures: [CMPicture]
+  related: [CMTeasable]
+  segment: String
+  teaserOverlaySettings: TeaserOverlaySettings
+  teaserTarget: CMLinkable
+  teaserTargets: [ExtendedTeaserTarget]
+  teaserText(view: String): String
+  teaserTitle: String
+  title: String
+  type: String!
+  validFrom: String
+  validTo: String
+  video: CMVideo
+  videos: [CMVideo]
+  viewtype: String
+}
+
+interface CMDownload {
+  authors: [CMTeasable]
+  context: CMNavigation
+  creationDate: String!
+  data: Blob
+  detailText(view: String): String
+  detailTextAsTree(view: String): RichTextTree
+  filename: String
+  ignoreUpdates: Int
+  languageId: String
+  link: Link
+  media: [CMMedia]
+  modificationDate: String!
+  name: String!
+  navigationPath: [CMLinkable]
+  picture: CMPicture
+  pictures: [CMPicture]
+  related: [CMTeasable]
+  segment: String
+  teaserOverlaySettings: TeaserOverlaySettings
+  teaserTarget: CMLinkable
+  teaserTargets: [ExtendedTeaserTarget]
+  teaserText(view: String): String
+  teaserTitle: String
+  title: String
+  type: String!
+  validFrom: String
+  validTo: String
+  video: CMVideo
+  videos: [CMVideo]
+  viewtype: String
+}
+
+interface CMDynamicList {
+  authors: [CMTeasable]
+  context: CMNavigation
+  creationDate: String!
+  detailText(view: String): String
+  detailTextAsTree(view: String): RichTextTree
+  ignoreUpdates: Int
+  items: [CMTeasable]
+  languageId: String
+  link: Link
+  media: [CMMedia]
+  modificationDate: String!
+  name: String!
+  navigationPath: [CMLinkable]
+  picture: CMPicture
+  pictures: [CMPicture]
+  related: [CMTeasable]
+  segment: String
+  teaserOverlaySettings: TeaserOverlaySettings
+  teaserTarget: CMLinkable
+  teaserTargets: [ExtendedTeaserTarget]
+  teaserText(view: String): String
+  teaserTitle: String
+  title: String
+  type: String!
+  validFrom: String
+  validTo: String
+  video: CMVideo
+  videos: [CMVideo]
+  viewtype: String
+}
+
+interface CMExternalChannel {
+  authors: [CMTeasable]
+  category: Category
+  children: [CMLinkable]
+  context: CMNavigation
+  creationDate: String!
+  detailText(view: String): String
+  detailTextAsTree(view: String): RichTextTree
+  externalId: String
+  footer: [CMLinkable]
+  grid: PageGrid
+  header: [CMLinkable]
+  hidden: Boolean
+  hiddenInSitemap: Boolean
+  ignoreUpdates: Int
+  languageId: String
+  link: Link
+  media: [CMMedia]
+  modificationDate: String!
+  name: String!
+  navigationPath: [CMLinkable]
+  picture: CMPicture
+  pictures: [CMPicture]
+  related: [CMTeasable]
+  segment: String
+  teaserOverlaySettings: TeaserOverlaySettings
+  teaserTarget: CMLinkable
+  teaserTargets: [ExtendedTeaserTarget]
+  teaserText(view: String): String
+  teaserTitle: String
+  title: String
+  type: String!
+  validFrom: String
+  validTo: String
+  video: CMVideo
+  videos: [CMVideo]
+  viewtype: String
+}
+
+interface CMExternalPage {
+  authors: [CMTeasable]
+  children: [CMLinkable]
+  context: CMNavigation
+  creationDate: String!
+  detailText(view: String): String
+  detailTextAsTree(view: String): RichTextTree
+  externalId: String
+  externalUriPath: String
+  footer: [CMLinkable]
+  grid: PageGrid
+  header: [CMLinkable]
+  hidden: Boolean
+  hiddenInSitemap: Boolean
+  ignoreUpdates: Int
+  languageId: String
+  link: Link
+  media: [CMMedia]
+  modificationDate: String!
+  name: String!
+  navigationPath: [CMLinkable]
+  picture: CMPicture
+  pictures: [CMPicture]
+  related: [CMTeasable]
+  segment: String
+  teaserOverlaySettings: TeaserOverlaySettings
+  teaserTarget: CMLinkable
+  teaserTargets: [ExtendedTeaserTarget]
+  teaserText(view: String): String
+  teaserTitle: String
+  title: String
+  type: String!
+  validFrom: String
+  validTo: String
+  video: CMVideo
+  videos: [CMVideo]
+  viewtype: String
+}
+
+interface CMExternalProduct {
+  authors: [CMTeasable]
+  context: CMNavigation
+  creationDate: String!
+  detailText(view: String): String
+  detailTextAsTree(view: String): RichTextTree
+  "pdpPagegrid"
+  externalId: String
+  ignoreUpdates: Int
+  languageId: String
+  link: Link
+  media: [CMMedia]
+  modificationDate: String!
+  name: String!
+  navigationPath: [CMLinkable]
+  picture: CMPicture
+  pictures: [CMPicture]
+  product: Product
+  related: [CMTeasable]
+  segment: String
+  teaserOverlaySettings: TeaserOverlaySettings
+  teaserTarget: CMLinkable
+  teaserTargets: [ExtendedTeaserTarget]
+  teaserText(view: String): String
+  teaserTitle: String
+  title: String
+  type: String!
+  validFrom: String
+  validTo: String
+  video: CMVideo
+  videos: [CMVideo]
+  viewtype: String
+}
+
+interface CMImage {
+  creationDate: String!
+  data: Blob
+  ignoreUpdates: Int
+  languageId: String
+  modificationDate: String!
+  name: String!
+  type: String!
+}
+
+interface CMImageMap {
+  authors: [CMTeasable]
+  context: CMNavigation
+  creationDate: String!
+  detailText(view: String): String
+  detailTextAsTree(view: String): RichTextTree
+  displayPicture: Boolean
+  displayShortText: Boolean
+  displayTitle: Boolean
+  hotZones: [Hotzone]
+  ignoreUpdates: Int
+  languageId: String
+  link: Link
+  media: [CMMedia]
+  modificationDate: String!
+  name: String!
+  navigationPath: [CMLinkable]
+  picture: CMPicture
+  pictures: [CMPicture]
+  related: [CMTeasable]
+  segment: String
+  teaserOverlaySettings: TeaserOverlaySettings
+  teaserTarget: CMLinkable
+  teaserTargets: [ExtendedTeaserTarget]
+  teaserText(view: String): String
+  teaserTitle: String
+  title: String
+  transformedHotZones: [TransformedHotZone]
+  type: String!
+  validFrom: String
+  validTo: String
+  video: CMVideo
+  videos: [CMVideo]
+  viewtype: String
+}
+
+interface CMLinkable {
+  creationDate: String!
+  ignoreUpdates: Int
+  languageId: String
+  link: Link
+  modificationDate: String!
+  name: String!
+  navigationPath: [CMLinkable]
+  segment: String
+  title: String
+  type: String!
+  validFrom: String
+  validTo: String
+  viewtype: String
+}
+
+interface CMLocalized {
+  creationDate: String!
+  ignoreUpdates: Int
+  languageId: String
+  modificationDate: String!
+  name: String!
+  type: String!
+}
+
+interface CMMedia {
+  alt: String
+  authors: [CMTeasable]
+  caption(view: String): String
+  context: CMNavigation
+  copyright: String
+  creationDate: String!
+  data: Blob
+  detailText(view: String): String
+  detailTextAsTree(view: String): RichTextTree
+  ignoreUpdates: Int
+  languageId: String
+  link: Link
+  media: [CMMedia]
+  modificationDate: String!
+  name: String!
+  navigationPath: [CMLinkable]
+  picture: CMPicture
+  pictures: [CMPicture]
+  related: [CMTeasable]
+  segment: String
+  teaserOverlaySettings: TeaserOverlaySettings
+  teaserTarget: CMLinkable
+  teaserTargets: [ExtendedTeaserTarget]
+  teaserText(view: String): String
+  teaserTitle: String
+  title: String
+  type: String!
+  validFrom: String
+  validTo: String
+  video: CMVideo
+  videos: [CMVideo]
+  viewtype: String
+}
+
+interface CMNavigation {
+  authors: [CMTeasable]
+  children: [CMLinkable]
+  context: CMNavigation
+  creationDate: String!
+  detailText(view: String): String
+  detailTextAsTree(view: String): RichTextTree
+  grid: PageGrid
+  hidden: Boolean
+  hiddenInSitemap: Boolean
+  ignoreUpdates: Int
+  languageId: String
+  link: Link
+  media: [CMMedia]
+  modificationDate: String!
+  name: String!
+  navigationPath: [CMLinkable]
+  picture: CMPicture
+  pictures: [CMPicture]
+  related: [CMTeasable]
+  segment: String
+  teaserOverlaySettings: TeaserOverlaySettings
+  teaserTarget: CMLinkable
+  teaserTargets: [ExtendedTeaserTarget]
+  teaserText(view: String): String
+  teaserTitle: String
+  title: String
+  type: String!
+  validFrom: String
+  validTo: String
+  video: CMVideo
+  videos: [CMVideo]
+  viewtype: String
+}
+
+interface CMObject {
+  creationDate: String!
+  modificationDate: String!
+  name: String!
+  type: String!
+}
+
+interface CMPicture {
+  alt: String
+  authors: [CMTeasable]
+  base64Images(cropNames: [String!]): [Base64Image]!
+  caption(view: String): String
+  context: CMNavigation
+  copyright: String
+  creationDate: String!
+  crops: [Crop!]!
+  data: Blob
+  dataUrl: String
+  detailText(view: String): String
+  detailTextAsTree(view: String): RichTextTree
+  height: Int
+  ignoreUpdates: Int
+  languageId: String
+  link: Link
+  media: [CMMedia]
+  modificationDate: String!
+  name: String!
+  navigationPath: [CMLinkable]
+  picture: CMPicture
+  pictures: [CMPicture]
+  related: [CMTeasable]
+  segment: String
+  teaserOverlaySettings: TeaserOverlaySettings
+  teaserTarget: CMLinkable
+  teaserTargets: [ExtendedTeaserTarget]
+  teaserText(view: String): String
+  teaserTitle: String
+  title: String
+  type: String!
+  uriTemplate: String
+  validFrom: String
+  validTo: String
+  video: CMVideo
+  videos: [CMVideo]
+  viewtype: String
+  width: Int
+}
+
+interface CMProduct {
+  authors: [CMTeasable]
+  context: CMNavigation
+  creationDate: String!
+  detailText(view: String): String
+  detailTextAsTree(view: String): RichTextTree
+  ignoreUpdates: Int
+  languageId: String
+  link: Link
+  media: [CMMedia]
+  modificationDate: String!
+  name: String!
+  navigationPath: [CMLinkable]
+  picture: CMPicture
+  pictures: [CMPicture]
+  price: Float
+  productCode: String
+  productName: String
+  related: [CMTeasable]
+  segment: String
+  teaserOverlaySettings: TeaserOverlaySettings
+  teaserTarget: CMLinkable
+  teaserTargets: [ExtendedTeaserTarget]
+  teaserText(view: String): String
+  teaserTitle: String
+  title: String
+  type: String!
+  validFrom: String
+  validTo: String
+  video: CMVideo
+  videos: [CMVideo]
+  viewtype: String
+}
+
+interface CMProductTeaser {
+  authors: [CMTeasable]
+  context: CMNavigation
+  creationDate: String!
+  detailText(view: String): String
+  detailTextAsTree(view: String): RichTextTree
+  externalId: String
+  ignoreUpdates: Int
+  languageId: String
+  link: Link
+  media: [CMMedia]
+  modificationDate: String!
+  name: String!
+  navigationPath: [CMLinkable]
+  picture: CMPicture
+  pictures: [CMPicture]
+  product: Product
+  related: [CMTeasable]
+  segment: String
+  teaserOverlaySettings: TeaserOverlaySettings
+  teaserTarget: CMLinkable
+  teaserTargets: [ExtendedTeaserTarget]
+  teaserText(view: String): String
+  teaserTitle: String
+  title: String
+  type: String!
+  validFrom: String
+  validTo: String
+  video: CMVideo
+  videos: [CMVideo]
+  viewtype: String
+}
+
+interface CMQueryList {
+  authors: [CMTeasable]
+  context: CMNavigation
+  creationDate: String!
+  detailText(view: String): String
+  detailTextAsTree(view: String): RichTextTree
+  ignoreUpdates: Int
+  items: [CMTeasable]
+  languageId: String
+  link: Link
+  media: [CMMedia]
+  modificationDate: String!
+  name: String!
+  navigationPath: [CMLinkable]
+  pagedItems(offset: Int): [CMTeasable]
+  picture: CMPicture
+  pictures: [CMPicture]
+  related: [CMTeasable]
+  segment: String
+  teaserOverlaySettings: TeaserOverlaySettings
+  teaserTarget: CMLinkable
+  teaserTargets: [ExtendedTeaserTarget]
+  teaserText(view: String): String
+  teaserTitle: String
+  title: String
+  type: String!
+  validFrom: String
+  validTo: String
+  video: CMVideo
+  videos: [CMVideo]
+  viewtype: String
+}
+
+interface CMResourceBundle {
+  creationDate: String!
+  ignoreUpdates: Int
+  languageId: String
+  localizations: MapOfString
+  modificationDate: String!
+  name: String!
+  type: String!
+}
+
+interface CMSite {
+  creationDate: String!
+  id: String
+  ignoreUpdates: Int
+  languageId: String
+  modificationDate: String!
+  name: String!
+  root: CMNavigation
+  type: String!
+}
+
+interface CMTeasable {
+  authors: [CMTeasable]
+  context: CMNavigation
+  creationDate: String!
+  detailText(view: String): String
+  detailTextAsTree(view: String): RichTextTree
+  ignoreUpdates: Int
+  languageId: String
+  link: Link
+  media: [CMMedia]
+  modificationDate: String!
+  name: String!
+  navigationPath: [CMLinkable]
+  picture: CMPicture
+  pictures: [CMPicture]
+  related: [CMTeasable]
+  segment: String
+  teaserOverlaySettings: TeaserOverlaySettings
+  teaserTarget: CMLinkable
+  teaserTargets: [ExtendedTeaserTarget]
+  teaserText(view: String): String
+  teaserTitle: String
+  title: String
+  type: String!
+  validFrom: String
+  validTo: String
+  video: CMVideo
+  videos: [CMVideo]
+  viewtype: String
+}
+
+interface CMTeaser {
+  authors: [CMTeasable]
+  context: CMNavigation
+  creationDate: String!
+  detailText(view: String): String
+  detailTextAsTree(view: String): RichTextTree
+  ignoreUpdates: Int
+  languageId: String
+  link: Link
+  media: [CMMedia]
+  modificationDate: String!
+  name: String!
+  navigationPath: [CMLinkable]
+  picture: CMPicture
+  pictures: [CMPicture]
+  related: [CMTeasable]
+  segment: String
+  teaserOverlaySettings: TeaserOverlaySettings
+  teaserTarget: CMLinkable
+  teaserTargets: [ExtendedTeaserTarget]
+  teaserText(view: String): String
+  teaserTitle: String
+  title: String
+  type: String!
+  validFrom: String
+  validTo: String
+  video: CMVideo
+  videos: [CMVideo]
+  viewtype: String
+}
+
+interface CMVideo {
+  alt: String
+  authors: [CMTeasable]
+  caption(view: String): String
+  context: CMNavigation
+  copyright: String
+  creationDate: String!
+  data: Blob
+  dataUrl: String
+  detailText(view: String): String
+  detailTextAsTree(view: String): RichTextTree
+  height: Int
+  ignoreUpdates: Int
+  languageId: String
+  link: Link
+  media: [CMMedia]
+  modificationDate: String!
+  name: String!
+  navigationPath: [CMLinkable]
+  picture: CMPicture
+  pictures: [CMPicture]
+  related: [CMTeasable]
+  segment: String
+  teaserOverlaySettings: TeaserOverlaySettings
+  teaserTarget: CMLinkable
+  teaserTargets: [ExtendedTeaserTarget]
+  teaserText(view: String): String
+  teaserTitle: String
+  timeLine: TimeLine
+  title: String
+  type: String!
+  validFrom: String
+  validTo: String
+  video: CMVideo
+  videos: [CMVideo]
+  viewtype: String
+  width: Int
+}
+
+interface CMVisual {
+  alt: String
+  authors: [CMTeasable]
+  caption(view: String): String
+  context: CMNavigation
+  copyright: String
+  creationDate: String!
+  data: Blob
+  dataUrl: String
+  detailText(view: String): String
+  detailTextAsTree(view: String): RichTextTree
+  height: Int
+  ignoreUpdates: Int
+  languageId: String
+  link: Link
+  media: [CMMedia]
+  modificationDate: String!
+  name: String!
+  navigationPath: [CMLinkable]
+  picture: CMPicture
+  pictures: [CMPicture]
+  related: [CMTeasable]
+  segment: String
+  teaserOverlaySettings: TeaserOverlaySettings
+  teaserTarget: CMLinkable
+  teaserTargets: [ExtendedTeaserTarget]
+  teaserText(view: String): String
+  teaserTitle: String
+  title: String
+  type: String!
+  validFrom: String
+  validTo: String
+  video: CMVideo
+  videos: [CMVideo]
+  viewtype: String
+  width: Int
+}
+
+interface Catalog {
+  catalog: Catalog
+  externalId: String
+  externalTechId: String
+  isDefaultCatalog: Boolean
+  isMasterCatalog: Boolean
+  locale: String
+  name: String
+  rootCategory: Category
+}
+
+interface Category {
+  breadcrumb: [Category]!
+  catalog: Catalog
+  catalogPicture: CatalogPicture
+  children: [Category]!
+  downloads: [CMDownload]!
+  externalId: String
+  externalTechId: String
+  locale: String
+  longDescription: String
+  name: String
+  parent: [Category]
+  picture: CMPicture
+  pictures: [CMPicture]!
+  products: [Product]!
+  shortDescription: String
+  visuals: [CMVisual]!
+}
+
+interface CommerceBean {
+  catalog: Catalog
+  externalId: String
+  externalTechId: String
+  locale: String
+}
+
+interface Content_ {
+  creationDate: String!
+  modificationDate: String!
+  name: String!
+  type: String!
+}
+
+interface Product {
+  catalog: Catalog
+  catalogPicture: CatalogPicture
+  category: Category
+  currency: String
+  defaultImageAlt: String
+  defaultImageUrl: String
+  definingAttributes: [ProductAttribute]!
+  describingAttributes: [ProductAttribute]!
+  downloads: [CMDownload]!
+  externalId: String
+  externalTechId: String
+  isAvailable: Boolean!
+  isVariant: Boolean!
+  listPrice: BigDecimal
+  locale: String
+  longDescription: String
+  metaDescription: String
+  metaKeywords: String
+  name: String
+  offerPrice: BigDecimal
+  picture: CMPicture
+  pictures: [CMPicture]!
+  seoSegment: String
+  shortDescription: String
+  storefrontUrl: String
+  thumbnailUrl: String
+  title: String
+  totalStockCount: Float!
+  variantAxisNames: [String]!
+  variantAxisValues(axisName: String!): [String]!
+  variants: [ProductVariant]!
+  visuals: [CMVisual]!
+}
+
+interface ProductVariant {
+  attributeValue(attributeId: String!): String
+  catalog: Catalog
+  catalogPicture: CatalogPicture
+  category: Category
+  currency: String
+  defaultImageAlt: String
+  defaultImageUrl: String
+  definingAttributes: [ProductAttribute]!
+  describingAttributes: [ProductAttribute]!
+  downloads: [CMDownload]!
+  externalId: String
+  externalTechId: String
+  isAvailable: Boolean!
+  isVariant: Boolean!
+  listPrice: BigDecimal
+  locale: String
+  longDescription: String
+  metaDescription: String
+  metaKeywords: String
+  name: String
+  offerPrice: BigDecimal
+  parent: Product
+  picture: CMPicture
+  pictures: [CMPicture]!
+  seoSegment: String
+  shortDescription: String
+  storefrontUrl: String
+  thumbnailUrl: String
+  title: String
+  totalStockCount: Float!
+  variantAxisNames: [String]!
+  variantAxisValues(axisName: String!): [String]!
+  variants: [ProductVariant]!
+  visuals: [CMVisual]!
+}
+
+type Base64Image {
+  base64: String
+  cropName: String!
+}
+
+type Blob {
+  contentType: String!
+  eTag: String!
+  size: Int!
+  uri: String
+}
+
+type CMAbstractCategoryImpl implements CMAbstractCategory & CMChannel & CMLinkable & CMLocalized & CMNavigation & CMObject & CMTeasable & Content_ {
+  authors: [CMTeasable]
+  children: [CMLinkable]
+  context: CMNavigation
+  creationDate: String!
+  detailText(view: String): String
+  detailTextAsTree(view: String): RichTextTree
+  extDisplayedDate: String
+  externalId: String
+  footer: [CMLinkable]
+  grid: PageGrid
+  header: [CMLinkable]
+  hidden: Boolean
+  hiddenInSitemap: Boolean
+  ignoreUpdates: Int
+  languageId: String
+  link: Link
+  media: [CMMedia]
+  modificationDate: String!
+  name: String!
+  navigationPath: [CMLinkable]
+  picture: CMPicture
+  pictures: [CMPicture]
+  related: [CMTeasable]
+  segment: String
+  teaserOverlaySettings: TeaserOverlaySettings
+  teaserTarget: CMLinkable
+  teaserTargets: [ExtendedTeaserTarget]
+  teaserText(view: String): String
+  teaserTitle: String
+  title: String
+  type: String!
+  validFrom: String
+  validTo: String
+  video: CMVideo
+  videos: [CMVideo]
+  viewtype: String
+}
+
+type CMArticleImpl implements CMArticle & CMLinkable & CMLocalized & CMObject & CMTeasable & Content_ {
+  authors: [CMTeasable]
+  context: CMNavigation
+  creationDate: String!
+  detailText(view: String): String
+  detailTextAsTree(view: String): RichTextTree
+  extDisplayedDate: String
+  ignoreUpdates: Int
+  languageId: String
+  link: Link
+  media: [CMMedia]
+  modificationDate: String!
+  name: String!
+  navigationPath: [CMLinkable]
+  picture: CMPicture
+  pictures: [CMPicture]
+  related: [CMTeasable]
+  segment: String
+  teaserOverlaySettings: TeaserOverlaySettings
+  teaserTarget: CMLinkable
+  teaserTargets: [ExtendedTeaserTarget]
+  teaserText(view: String): String
+  teaserTitle: String
+  title: String
+  type: String!
+  validFrom: String
+  validTo: String
+  video: CMVideo
+  videos: [CMVideo]
+  viewtype: String
+}
+
+type CMChannelImpl implements CMChannel & CMLinkable & CMLocalized & CMNavigation & CMObject & CMTeasable & Content_ {
+  authors: [CMTeasable]
+  children: [CMLinkable]
+  context: CMNavigation
+  creationDate: String!
+  detailText(view: String): String
+  detailTextAsTree(view: String): RichTextTree
+  extDisplayedDate: String
+  footer: [CMLinkable]
+  grid: PageGrid
+  header: [CMLinkable]
+  hidden: Boolean
+  hiddenInSitemap: Boolean
+  ignoreUpdates: Int
+  languageId: String
+  link: Link
+  media: [CMMedia]
+  modificationDate: String!
+  name: String!
+  navigationPath: [CMLinkable]
+  picture: CMPicture
+  pictures: [CMPicture]
+  related: [CMTeasable]
+  segment: String
+  teaserOverlaySettings: TeaserOverlaySettings
+  teaserTarget: CMLinkable
+  teaserTargets: [ExtendedTeaserTarget]
+  teaserText(view: String): String
+  teaserTitle: String
+  title: String
+  type: String!
+  validFrom: String
+  validTo: String
+  video: CMVideo
+  videos: [CMVideo]
+  viewtype: String
+}
+
+type CMCollectionImpl implements CMCollection & CMLinkable & CMLocalized & CMObject & CMTeasable & Content_ {
+  authors: [CMTeasable]
+  context: CMNavigation
+  creationDate: String!
+  detailText(view: String): String
+  detailTextAsTree(view: String): RichTextTree
+  extDisplayedDate: String
+  ignoreUpdates: Int
+  items: [CMTeasable]
+  languageId: String
+  link: Link
+  media: [CMMedia]
+  modificationDate: String!
+  name: String!
+  navigationPath: [CMLinkable]
+  picture: CMPicture
+  pictures: [CMPicture]
+  related: [CMTeasable]
+  segment: String
+  teaserOverlaySettings: TeaserOverlaySettings
+  teaserTarget: CMLinkable
+  teaserTargets: [ExtendedTeaserTarget]
+  teaserText(view: String): String
+  teaserTitle: String
+  title: String
+  type: String!
+  validFrom: String
+  validTo: String
+  video: CMVideo
+  videos: [CMVideo]
+  viewtype: String
+}
+
+type CMDownloadImpl implements CMDownload & CMLinkable & CMLocalized & CMObject & CMTeasable & Content_ {
+  authors: [CMTeasable]
+  context: CMNavigation
+  creationDate: String!
+  data: Blob
+  detailText(view: String): String
+  detailTextAsTree(view: String): RichTextTree
+  extDisplayedDate: String
+  filename: String
+  ignoreUpdates: Int
+  languageId: String
+  link: Link
+  media: [CMMedia]
+  modificationDate: String!
+  name: String!
+  navigationPath: [CMLinkable]
+  picture: CMPicture
+  pictures: [CMPicture]
+  related: [CMTeasable]
+  segment: String
+  teaserOverlaySettings: TeaserOverlaySettings
+  teaserTarget: CMLinkable
+  teaserTargets: [ExtendedTeaserTarget]
+  teaserText(view: String): String
+  teaserTitle: String
+  title: String
+  type: String!
+  validFrom: String
+  validTo: String
+  video: CMVideo
+  videos: [CMVideo]
+  viewtype: String
+}
+
+type CMDynamicListImpl implements CMCollection & CMDynamicList & CMLinkable & CMLocalized & CMObject & CMTeasable & Content_ {
+  authors: [CMTeasable]
+  context: CMNavigation
+  creationDate: String!
+  detailText(view: String): String
+  detailTextAsTree(view: String): RichTextTree
+  extDisplayedDate: String
+  ignoreUpdates: Int
+  items: [CMTeasable]
+  languageId: String
+  link: Link
+  media: [CMMedia]
+  modificationDate: String!
+  name: String!
+  navigationPath: [CMLinkable]
+  picture: CMPicture
+  pictures: [CMPicture]
+  related: [CMTeasable]
+  segment: String
+  teaserOverlaySettings: TeaserOverlaySettings
+  teaserTarget: CMLinkable
+  teaserTargets: [ExtendedTeaserTarget]
+  teaserText(view: String): String
+  teaserTitle: String
+  title: String
+  type: String!
+  validFrom: String
+  validTo: String
+  video: CMVideo
+  videos: [CMVideo]
+  viewtype: String
+}
+
+type CMExternalChannelImpl implements CMAbstractCategory & CMChannel & CMExternalChannel & CMLinkable & CMLocalized & CMNavigation & CMObject & CMTeasable & Content_ {
+  authors: [CMTeasable]
+  category: Category
+  children: [CMLinkable]
+  context: CMNavigation
+  creationDate: String!
+  detailText(view: String): String
+  detailTextAsTree(view: String): RichTextTree
+  extDisplayedDate: String
+  externalId: String
+  footer: [CMLinkable]
+  grid: PageGrid
+  header: [CMLinkable]
+  hidden: Boolean
+  hiddenInSitemap: Boolean
+  ignoreUpdates: Int
+  languageId: String
+  link: Link
+  media: [CMMedia]
+  modificationDate: String!
+  name: String!
+  navigationPath: [CMLinkable]
+  picture: CMPicture
+  pictures: [CMPicture]
+  related: [CMTeasable]
+  segment: String
+  teaserOverlaySettings: TeaserOverlaySettings
+  teaserTarget: CMLinkable
+  teaserTargets: [ExtendedTeaserTarget]
+  teaserText(view: String): String
+  teaserTitle: String
+  title: String
+  type: String!
+  validFrom: String
+  validTo: String
+  video: CMVideo
+  videos: [CMVideo]
+  viewtype: String
+}
+
+type CMExternalPageImpl implements CMChannel & CMExternalPage & CMLinkable & CMLocalized & CMNavigation & CMObject & CMTeasable & Content_ {
+  authors: [CMTeasable]
+  children: [CMLinkable]
+  context: CMNavigation
+  creationDate: String!
+  detailText(view: String): String
+  detailTextAsTree(view: String): RichTextTree
+  extDisplayedDate: String
+  externalId: String
+  externalUriPath: String
+  footer: [CMLinkable]
+  grid: PageGrid
+  header: [CMLinkable]
+  hidden: Boolean
+  hiddenInSitemap: Boolean
+  ignoreUpdates: Int
+  languageId: String
+  link: Link
+  media: [CMMedia]
+  modificationDate: String!
+  name: String!
+  navigationPath: [CMLinkable]
+  picture: CMPicture
+  pictures: [CMPicture]
+  related: [CMTeasable]
+  segment: String
+  teaserOverlaySettings: TeaserOverlaySettings
+  teaserTarget: CMLinkable
+  teaserTargets: [ExtendedTeaserTarget]
+  teaserText(view: String): String
+  teaserTitle: String
+  title: String
+  type: String!
+  validFrom: String
+  validTo: String
+  video: CMVideo
+  videos: [CMVideo]
+  viewtype: String
+}
+
+type CMExternalProductImpl implements CMExternalProduct & CMLinkable & CMLocalized & CMObject & CMTeasable & Content_ {
+  authors: [CMTeasable]
+  context: CMNavigation
+  creationDate: String!
+  detailText(view: String): String
+  detailTextAsTree(view: String): RichTextTree
+  extDisplayedDate: String
+  externalId: String
+  ignoreUpdates: Int
+  languageId: String
+  link: Link
+  media: [CMMedia]
+  modificationDate: String!
+  name: String!
+  navigationPath: [CMLinkable]
+  picture: CMPicture
+  pictures: [CMPicture]
+  product: Product
+  related: [CMTeasable]
+  segment: String
+  teaserOverlaySettings: TeaserOverlaySettings
+  teaserTarget: CMLinkable
+  teaserTargets: [ExtendedTeaserTarget]
+  teaserText(view: String): String
+  teaserTitle: String
+  title: String
+  type: String!
+  validFrom: String
+  validTo: String
+  video: CMVideo
+  videos: [CMVideo]
+  viewtype: String
+}
+
+type CMImageImpl implements CMImage & CMLocalized & CMObject & Content_ {
+  creationDate: String!
+  data: Blob
+  description: String
+  ignoreUpdates: Int
+  languageId: String
+  modificationDate: String!
+  name: String!
+  type: String!
+}
+
+type CMImageMapImpl implements CMImageMap & CMLinkable & CMLocalized & CMObject & CMTeasable & CMTeaser & Content_ {
+  authors: [CMTeasable]
+  context: CMNavigation
+  creationDate: String!
+  detailText(view: String): String
+  detailTextAsTree(view: String): RichTextTree
+  displayPicture: Boolean
+  displayShortText: Boolean
+  displayTitle: Boolean
+  extDisplayedDate: String
+  hotZones: [Hotzone]
+  ignoreUpdates: Int
+  languageId: String
+  link: Link
+  media: [CMMedia]
+  modificationDate: String!
+  name: String!
+  navigationPath: [CMLinkable]
+  picture: CMPicture
+  pictures: [CMPicture]
+  related: [CMTeasable]
+  segment: String
+  target: CMLinkable
+  teaserOverlaySettings: TeaserOverlaySettings
+  teaserTarget: CMLinkable
+  teaserTargets: [ExtendedTeaserTarget]
+  teaserText(view: String): String
+  teaserTitle: String
+  title: String
+  transformedHotZones: [TransformedHotZone]
+  type: String!
+  validFrom: String
+  validTo: String
+  video: CMVideo
+  videos: [CMVideo]
+  viewtype: String
+}
+
+type CMLinkableImpl implements CMLinkable & CMLocalized & CMObject & Content_ {
+  context: CMNavigation
+  creationDate: String!
+  extDisplayedDate: String
+  ignoreUpdates: Int
+  languageId: String
+  link: Link
+  modificationDate: String!
+  name: String!
+  navigationPath: [CMLinkable]
+  segment: String
+  title: String
+  type: String!
+  validFrom: String
+  validTo: String
+  viewtype: String
+}
+
+type CMLocalizedImpl implements CMLocalized & CMObject & Content_ {
+  creationDate: String!
+  ignoreUpdates: Int
+  languageId: String
+  modificationDate: String!
+  name: String!
+  type: String!
+}
+
+type CMMediaImpl implements CMLinkable & CMLocalized & CMMedia & CMObject & CMTeasable & Content_ {
+  alt: String
+  authors: [CMTeasable]
+  caption(view: String): String
+  context: CMNavigation
+  copyright: String
+  creationDate: String!
+  data: Blob
+  detailText(view: String): String
+  detailTextAsTree(view: String): RichTextTree
+  extDisplayedDate: String
+  ignoreUpdates: Int
+  languageId: String
+  link: Link
+  media: [CMMedia]
+  modificationDate: String!
+  name: String!
+  navigationPath: [CMLinkable]
+  picture: CMPicture
+  pictures: [CMPicture]
+  related: [CMTeasable]
+  segment: String
+  teaserOverlaySettings: TeaserOverlaySettings
+  teaserTarget: CMLinkable
+  teaserTargets: [ExtendedTeaserTarget]
+  teaserText(view: String): String
+  teaserTitle: String
+  title: String
+  type: String!
+  validFrom: String
+  validTo: String
+  video: CMVideo
+  videos: [CMVideo]
+  viewtype: String
+}
+
+type CMNavigationImpl implements CMLinkable & CMLocalized & CMNavigation & CMObject & CMTeasable & Content_ {
+  authors: [CMTeasable]
+  children: [CMLinkable]
+  context: CMNavigation
+  creationDate: String!
+  detailText(view: String): String
+  detailTextAsTree(view: String): RichTextTree
+  extDisplayedDate: String
+  grid: PageGrid
+  hidden: Boolean
+  hiddenInSitemap: Boolean
+  ignoreUpdates: Int
+  languageId: String
+  link: Link
+  media: [CMMedia]
+  modificationDate: String!
+  name: String!
+  navigationPath: [CMLinkable]
+  picture: CMPicture
+  pictures: [CMPicture]
+  related: [CMTeasable]
+  segment: String
+  teaserOverlaySettings: TeaserOverlaySettings
+  teaserTarget: CMLinkable
+  teaserTargets: [ExtendedTeaserTarget]
+  teaserText(view: String): String
+  teaserTitle: String
+  title: String
+  type: String!
+  validFrom: String
+  validTo: String
+  video: CMVideo
+  videos: [CMVideo]
+  viewtype: String
+}
+
+type CMObjectImpl implements CMObject & Content_ {
+  creationDate: String!
+  modificationDate: String!
+  name: String!
+  type: String!
+}
+
+type CMPictureImpl implements CMLinkable & CMLocalized & CMMedia & CMObject & CMPicture & CMTeasable & CMVisual & Content_ {
+  alt: String
+  authors: [CMTeasable]
+  base64Images(cropNames: [String!]): [Base64Image]!
+  caption(view: String): String
+  context: CMNavigation
+  copyright: String
+  creationDate: String!
+  crops: [Crop!]!
+  data: Blob
+  dataUrl: String
+  detailText(view: String): String
+  detailTextAsTree(view: String): RichTextTree
+  extDisplayedDate: String
+  height: Int
+  ignoreUpdates: Int
+  languageId: String
+  link: Link
+  media: [CMMedia]
+  modificationDate: String!
+  name: String!
+  navigationPath: [CMLinkable]
+  picture: CMPicture
+  pictures: [CMPicture]
+  related: [CMTeasable]
+  segment: String
+  teaserOverlaySettings: TeaserOverlaySettings
+  teaserTarget: CMLinkable
+  teaserTargets: [ExtendedTeaserTarget]
+  teaserText(view: String): String
+  teaserTitle: String
+  title: String
+  type: String!
+  uriTemplate: String!
+  validFrom: String
+  validTo: String
+  video: CMVideo
+  videos: [CMVideo]
+  viewtype: String
+  width: Int
+}
+
+type CMProductImpl implements CMLinkable & CMLocalized & CMObject & CMProduct & CMTeasable & Content_ {
+  authors: [CMTeasable]
+  context: CMNavigation
+  creationDate: String!
+  detailText(view: String): String
+  detailTextAsTree(view: String): RichTextTree
+  downloads: [CMDownload]
+  extDisplayedDate: String
+  ignoreUpdates: Int
+  languageId: String
+  link: Link
+  media: [CMMedia]
+  modificationDate: String!
+  name: String!
+  navigationPath: [CMLinkable]
+  picture: CMPicture
+  pictures: [CMPicture]
+  price: Float
+  productCode: String
+  productName: String
+  related: [CMTeasable]
+  segment: String
+  teaserOverlaySettings: TeaserOverlaySettings
+  teaserTarget: CMLinkable
+  teaserTargets: [ExtendedTeaserTarget]
+  teaserText(view: String): String
+  teaserTitle: String
+  title: String
+  type: String!
+  validFrom: String
+  validTo: String
+  video: CMVideo
+  videos: [CMVideo]
+  viewtype: String
+}
+
+type CMProductTeaserImpl implements CMLinkable & CMLocalized & CMObject & CMProductTeaser & CMTeasable & Content_ {
+  authors: [CMTeasable]
+  context: CMNavigation
+  creationDate: String!
+  detailText(view: String): String
+  detailTextAsTree(view: String): RichTextTree
+  extDisplayedDate: String
+  externalId: String
+  ignoreUpdates: Int
+  languageId: String
+  link: Link
+  media: [CMMedia]
+  modificationDate: String!
+  name: String!
+  navigationPath: [CMLinkable]
+  picture: CMPicture
+  pictures: [CMPicture]
+  product: Product
+  related: [CMTeasable]
+  segment: String
+  teaserOverlaySettings: TeaserOverlaySettings
+  teaserTarget: CMLinkable
+  teaserTargets: [ExtendedTeaserTarget]
+  teaserText(view: String): String
+  teaserTitle: String
+  title: String
+  type: String!
+  validFrom: String
+  validTo: String
+  video: CMVideo
+  videos: [CMVideo]
+  viewtype: String
+}
+
+type CMQueryListImpl implements CMCollection & CMDynamicList & CMLinkable & CMLocalized & CMObject & CMQueryList & CMTeasable & Content_ {
+  authors: [CMTeasable]
+  context: CMNavigation
+  creationDate: String!
+  detailText(view: String): String
+  detailTextAsTree(view: String): RichTextTree
+  extDisplayedDate: String
+  ignoreUpdates: Int
+  items: [CMTeasable]
+  languageId: String
+  link: Link
+  media: [CMMedia]
+  modificationDate: String!
+  name: String!
+  navigationPath: [CMLinkable]
+  pagedItems(offset: Int): [CMTeasable]
+  picture: CMPicture
+  pictures: [CMPicture]
+  related: [CMTeasable]
+  segment: String
+  teaserOverlaySettings: TeaserOverlaySettings
+  teaserTarget: CMLinkable
+  teaserTargets: [ExtendedTeaserTarget]
+  teaserText(view: String): String
+  teaserTitle: String
+  title: String
+  type: String!
+  validFrom: String
+  validTo: String
+  video: CMVideo
+  videos: [CMVideo]
+  viewtype: String
+}
+
+type CMResourceBundleImpl implements CMLocalized & CMObject & CMResourceBundle & Content_ {
+  creationDate: String!
+  ignoreUpdates: Int
+  languageId: String
+  localizations: MapOfString
+  modificationDate: String!
+  name: String!
+  type: String!
+}
+
+type CMSiteImpl implements CMLocalized & CMObject & CMSite & Content_ {
+  creationDate: String!
+  id: String
+  ignoreUpdates: Int
+  languageId: String
+  modificationDate: String!
+  name: String!
+  root: CMNavigation
+  type: String!
+}
+
+type CMTeasableImpl implements CMLinkable & CMLocalized & CMObject & CMTeasable & Content_ {
+  authors: [CMTeasable]
+  context: CMNavigation
+  creationDate: String!
+  detailText(view: String): String
+  detailTextAsTree(view: String): RichTextTree
+  extDisplayedDate: String
+  ignoreUpdates: Int
+  languageId: String
+  link: Link
+  media: [CMMedia]
+  modificationDate: String!
+  name: String!
+  navigationPath: [CMLinkable]
+  picture: CMPicture
+  pictures: [CMPicture]
+  related: [CMTeasable]
+  segment: String
+  teaserOverlaySettings: TeaserOverlaySettings
+  teaserTarget: CMLinkable
+  teaserTargets: [ExtendedTeaserTarget]
+  teaserText(view: String): String
+  teaserTitle: String
+  title: String
+  type: String!
+  validFrom: String
+  validTo: String
+  video: CMVideo
+  videos: [CMVideo]
+  viewtype: String
+}
+
+type CMTeaserImpl implements CMLinkable & CMLocalized & CMObject & CMTeasable & CMTeaser & Content_ {
+  authors: [CMTeasable]
+  context: CMNavigation
+  creationDate: String!
+  detailText(view: String): String
+  detailTextAsTree(view: String): RichTextTree
+  extDisplayedDate: String
+  ignoreUpdates: Int
+  languageId: String
+  link: Link
+  media: [CMMedia]
+  modificationDate: String!
+  name: String!
+  navigationPath: [CMLinkable]
+  picture: CMPicture
+  pictures: [CMPicture]
+  related: [CMTeasable]
+  segment: String
+  target: CMLinkable
+  teaserOverlaySettings: TeaserOverlaySettings
+  teaserTarget: CMLinkable
+  teaserTargets: [ExtendedTeaserTarget]
+  teaserText(view: String): String
+  teaserTitle: String
+  title: String
+  type: String!
+  validFrom: String
+  validTo: String
+  video: CMVideo
+  videos: [CMVideo]
+  viewtype: String
+}
+
+type CMVideoImpl implements CMLinkable & CMLocalized & CMMedia & CMObject & CMTeasable & CMVideo & CMVisual & Content_ {
+  alt: String
+  authors: [CMTeasable]
+  caption(view: String): String
+  context: CMNavigation
+  copyright: String
+  creationDate: String!
+  data: Blob
+  dataUrl: String
+  detailText(view: String): String
+  detailTextAsTree(view: String): RichTextTree
+  extDisplayedDate: String
+  height: Int
+  ignoreUpdates: Int
+  languageId: String
+  link: Link
+  media: [CMMedia]
+  modificationDate: String!
+  name: String!
+  navigationPath: [CMLinkable]
+  picture: CMPicture
+  pictures: [CMPicture]
+  related: [CMTeasable]
+  segment: String
+  teaserOverlaySettings: TeaserOverlaySettings
+  teaserTarget: CMLinkable
+  teaserTargets: [ExtendedTeaserTarget]
+  teaserText(view: String): String
+  teaserTitle: String
+  timeLine: TimeLine
+  title: String
+  type: String!
+  validFrom: String
+  validTo: String
+  video: CMVideo
+  videos: [CMVideo]
+  viewtype: String
+  width: Int
+}
+
+type CMVisualImpl implements CMLinkable & CMLocalized & CMMedia & CMObject & CMTeasable & CMVisual & Content_ {
+  alt: String
+  authors: [CMTeasable]
+  caption(view: String): String
+  context: CMNavigation
+  copyright: String
+  creationDate: String!
+  data: Blob
+  dataUrl: String
+  detailText(view: String): String
+  detailTextAsTree(view: String): RichTextTree
+  extDisplayedDate: String
+  height: Int
+  ignoreUpdates: Int
+  languageId: String
+  link: Link
+  media: [CMMedia]
+  modificationDate: String!
+  name: String!
+  navigationPath: [CMLinkable]
+  picture: CMPicture
+  pictures: [CMPicture]
+  related: [CMTeasable]
+  segment: String
+  teaserOverlaySettings: TeaserOverlaySettings
+  teaserTarget: CMLinkable
+  teaserTargets: [ExtendedTeaserTarget]
+  teaserText(view: String): String
+  teaserTitle: String
+  title: String
+  type: String!
+  validFrom: String
+  validTo: String
+  video: CMVideo
+  videos: [CMVideo]
+  viewtype: String
+  width: Int
+}
+
+type CatalogImpl implements Catalog & CommerceBean {
+  catalog: Catalog
+  externalId: String
+  externalTechId: String
+  isDefaultCatalog: Boolean
+  isMasterCatalog: Boolean
+  locale: String
+  name: String
+  rootCategory: Category
+}
+
+type CatalogPicture {
+  picture: CMPicture
+  url: String
+}
+
+type CategoryImpl implements Category & CommerceBean {
+  breadcrumb: [Category]!
+  catalog: Catalog
+  catalogPicture: CatalogPicture
+  children: [Category]!
+  downloads: [CMDownload]!
+  externalId: String
+  externalTechId: String
+  locale: String
+  longDescription: String
+  name: String
+  parent: [Category]
+  picture: CMPicture
+  pictures: [CMPicture]!
+  products: [Product]!
+  shortDescription: String
+  visuals: [CMVisual]!
+}
+
+type CommerceBeanImpl implements CommerceBean {
+  catalog: Catalog
+  externalId: String
+  externalTechId: String
+  locale: String
+}
+
+type CommerceRoot {
+  catalog(catalogId: String, siteId: String!): Catalog
+  catalogs(siteId: String!): [Catalog]
+  category(categoryId: String!, siteId: String!): Category
+  product(externalId: String!, siteId: String!): Product
+}
+
+type ContentRoot {
+  article(id: String!): CMArticle
+  content(id: String!, type: String): Content_
+  page(id: String!): CMChannel
+  picture(id: String!): CMPicture
+  queryList(id: String!): CMQueryList
+  search(docTypes: [String], limit: Int, offset: Int, query: String!, siteId: String, sortFields: [SortFieldWithOrder]): SearchResult
+  site(id: String!): Site
+  sites: [Site]!
+}
+
+type Content_Impl implements Content_ {
+  creationDate: String!
+  modificationDate: String!
+  name: String!
+  type: String!
+}
+
+type Crop {
+  aspectRatio: Dimension!
+  minHeight: Int!
+  minWidth: Int!
+  name: String!
+  sizes: [Dimension]!
+}
+
+type Dimension {
+  height: Float!
+  width: Float!
+}
+
+type ExtendedTeaserTarget {
+  callToActionEnabled: Boolean
+  callToActionText: String
+  target: CMLinkable
+}
+
+type Hotzone {
+  alt: String
+  coords: String!
+  displayAsInlineOverlay: Boolean
+  inlineOverlayTheme: String
+  linkedContent: CMLinkable
+  shape: String!
+  target: String
+}
+
+type ImageMapCrop {
+  coords: [Point]!
+  name: String!
+}
+
+type Link {
+  id: ID
+  type: String
+}
+
+type PageGrid {
+  cssClassName: String
+  rows: [PageGridRow]
+}
+
+type PageGridPlacement {
+  colspan: Int!
+  column: Int!
+  items: [CMLinkable]!
+  name: String!
+  viewtype: String
+  width: Int!
+}
+
+type PageGridRow {
+  placements: [PageGridPlacement]
+}
+
+type Point {
+  x: Float
+  y: Float
+}
+
+type ProductAttribute {
+  description: String
+  displayName: String
+  externalId: String
+  id: String
+  isDefining: Boolean!
+  type: String
+  unit: String
+  value: String
+  values: [String]!
+}
+
+type ProductImpl implements CommerceBean & Product {
+  catalog: Catalog
+  catalogPicture: CatalogPicture!
+  category: Category
+  currency: String
+  defaultImageAlt: String
+  defaultImageUrl: String
+  definingAttributes: [ProductAttribute]!
+  describingAttributes: [ProductAttribute]!
+  downloads: [CMDownload]!
+  externalId: String
+  externalTechId: String
+  isAvailable: Boolean!
+  isVariant: Boolean!
+  listPrice: BigDecimal
+  locale: String
+  longDescription: String
+  metaDescription: String
+  metaKeywords: String
+  name: String
+  offerPrice: BigDecimal
+  picture: CMPicture
+  pictures: [CMPicture]!
+  seoSegment: String
+  shortDescription: String
+  storefrontUrl: String
+  thumbnailUrl: String
+  title: String
+  totalStockCount: Float!
+  variantAxisNames: [String]!
+  variantAxisValues(axisName: String!): [String]!
+  variants: [ProductVariant]!
+  visuals: [CMVisual]!
+}
+
+type ProductVariantImpl implements CommerceBean & Product & ProductVariant {
+  attributeValue(attributeId: String!): String
+  catalog: Catalog
+  catalogPicture: CatalogPicture!
+  category: Category
+  currency: String
+  defaultImageAlt: String
+  defaultImageUrl: String
+  definingAttributes: [ProductAttribute]!
+  describingAttributes: [ProductAttribute]!
+  downloads: [CMDownload]!
+  externalId: String
+  externalTechId: String
+  isAvailable: Boolean!
+  isVariant: Boolean!
+  listPrice: BigDecimal
+  locale: String
+  longDescription: String
+  metaDescription: String
+  metaKeywords: String
+  name: String
+  offerPrice: BigDecimal
+  parent: Product
+  picture: CMPicture
+  pictures: [CMPicture]!
+  seoSegment: String
+  shortDescription: String
+  storefrontUrl: String
+  thumbnailUrl: String
+  title: String
+  totalStockCount: Float!
+  variantAxisNames: [String]!
+  variantAxisValues(axisName: String!): [String]!
+  variants: [ProductVariant]!
+  visuals: [CMVisual]!
+}
+
+type Query {
+  commerce: CommerceRoot
+  content: ContentRoot
+}
+
+type SearchResult {
+  numFound: Int!
+  result: [Content_]
+}
+
+type Site {
+  crops: [Crop]
+  id: String!
+  locale: String!
+  name: String!
+  root: CMNavigation
+}
+
+type TeaserOverlaySettings {
+  enabled: Boolean
+  positionX: Int
+  positionY: Int
+  style: MapOfString
+  width: Int
+}
+
+type TimeLine {
+  defaultTarget: CMTeasable
+  sequences: [TimeLineEntry]
+}
+
+type TimeLineEntry {
+  position: Int
+  startTimeMillis: Int
+  target: CMTeasable
+}
+
+type TransformedHotZone {
+  alt: String
+  crops: [ImageMapCrop]
+  displayAsInlineOverlay: Boolean
+  inlineOverlayTheme: String
+  linkedContent: CMLinkable
+  points: [Point]
+  shape: String
+  target: String
+}
+
+enum SortFieldWithOrder {
+  CREATION_DATE_ASC
+  CREATION_DATE_DESC
+  EXTERNALLY_DISPPLAYED_DATE_ASC
+  EXTERNALLY_DISPPLAYED_DATE_DESC
+  MODIFICATION_DATE_ASC
+  MODIFICATION_DATE_DESC
+}
+
+
+"Built-in map of scalar type"
+scalar MapOfString
+
+"Built-in rich text object tree"
+scalar RichTextTree
+
+"Built-in java.math.BigDecimal"
+scalar BigDecimal

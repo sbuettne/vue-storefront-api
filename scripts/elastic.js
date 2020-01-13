@@ -28,6 +28,7 @@ program
   .option('--input-file <inputFile>', 'path to the input file', 'var/catalog.json')
   .action((cmd) => {
     const output = `http://${config.host}:${config.port}/${cmd.outputIndex}`
+    console.log(`Connecting to elasticsearch at ${output}`);
 
     const child = spawnSync('node', [
       'node_modules/elasticdump/bin/elasticdump',

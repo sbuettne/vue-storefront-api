@@ -4,7 +4,11 @@
       "name": "api",
       "script": "./dist/index.js",
       "log_date_format": "YYYY-MM-DD HH:mm:ss",
-      "ignore_watch": ["node_modules"]
+      "ignore_watch": ["node_modules"],
+      "node_args": "-r graphql-import-node/register",
+      "env": {
+        "NODE_TLS_REJECT_UNAUTHORIZED": "0"
+      }
     },
     {
       "name": "o2m",

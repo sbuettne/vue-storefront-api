@@ -1,0 +1,36 @@
+query searchCategoryQuery {
+  content {
+    search(query: "*", docTypes: "CMExternalChannel", siteId: "sfra-en-gb", limit: 99999) {
+      numFound
+      result {
+        name
+        type
+        ...ChannelFragment
+      }
+    }
+  }
+}
+
+fragment ChannelFragment on CMExternalChannel {
+  ...Reference
+  externalId
+  segment
+  type
+  grid {
+    rows {
+      placements {
+        name
+        viewtype
+        items {
+          ...Reference
+        }
+      }
+    }
+  }
+}
+
+fragment Reference on CMTeasable {
+  name
+  type
+  link {id}
+}

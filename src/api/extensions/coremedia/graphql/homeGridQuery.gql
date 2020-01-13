@@ -1,0 +1,134 @@
+query PageQuery($id: String!) {
+  content {
+    page(id: $id) {
+      __typename
+      ...Reference
+      title
+      teaserTitle
+      teaserText
+      creationDate
+      grid {
+        cssClassName
+        rows {
+          placements {
+            name
+            viewtype
+            items {
+              ...Teasable
+              ... ImageMap
+              ... on CMCollection {
+                viewtype
+                items {
+                  ...Teasable
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+fragment ContentInfo on Content_ {
+  name
+  creationDate
+}
+fragment Reference on CMLinkable {
+  ...ContentInfo
+  title
+  segment
+  link {
+    id
+    type
+  }
+}
+fragment ImageMap on CMImageMap {
+  displayTitle
+  displayShortText
+  displayPicture
+  transformedHotZones {
+    crops {
+      name
+      coords {
+        x
+        y
+      }
+    }
+    points {
+      x
+      y
+    }
+    alt
+    shape
+    target
+    displayAsInlineOverlay
+    inlineOverlayTheme
+    linkedContent {
+      ...Reference
+      ...QuickInfo
+    }
+  }
+}
+fragment Teasable on CMTeasable {
+  ...Reference
+  teaserTitle
+  teaserText
+  teaserTarget {
+    ...Reference
+  }
+  teaserTargets {
+    target {
+      ...Reference
+    }
+    callToActionEnabled
+    callToActionText
+  }
+  teaserOverlaySettings {
+    style
+    enabled
+    positionX
+    positionY
+    width
+  }
+  picture {
+    ...Picture
+  }
+  video {
+    ...Video
+  }
+}
+fragment QuickInfo on CMTeasable {
+  ...Reference
+  teaserTitle
+  teaserText
+  picture {
+    ...Picture
+  }
+}
+fragment Picture on CMPicture {
+  ...ContentInfo
+  title
+  alt
+  link {
+    id
+    type
+  }
+  uriTemplate
+  base64Images {
+    cropName
+    base64
+  }
+}
+fragment Video on CMVideo {
+  ...ContentInfo
+  title
+  alt
+  link {
+    id
+    type
+  }
+  data {
+    uri
+  }
+  dataUrl
+}

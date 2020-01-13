@@ -1,0 +1,105 @@
+version: '3.4'
+services:
+
+  vsf-elasticsearch:
+    container_name: vsf-elasticsearch
+    build: /opt/vsf/vue-storefront-api/docker/elasticsearch/
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - /opt/vsf/vue-storefront-api/docker/elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
+    #    ports:
+    #      - '9200:9200'
+    #      - '9300:9300'
+    environment:
+      - discovery.type=single-node
+      - cluster.name=docker-cluster
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xmx512m -Xms512m"
+    networks:
+      - backend
+    labels:
+      traefik.enable: "true"
+      traefik.port: "9200"
+      traefik.frontend.entryPoints: http,https
+      traefik.frontend.headers.SSLRedirect: "true"
+      traefik.es.frontend.rule: Host:vsf-es${HOSTNAME_DELIMITER:-.}${ENVIRONMENT_FQDN:-docker.localhost}
+
+  vsf-kibana:
+    container_name: vsf-kibana
+    build: /opt/vsf/vue-storefront-api/docker/kibana/
+    volumes:
+      - /opt/vsf/vue-storefront-api/docker/kibana/config/:/usr/share/kibana/config:ro
+    #    ports:
+    #      - '5601:5601'
+#    depends_on:
+#      - vsf-elasticsearch
+    networks:
+      - backend
+    labels:
+      traefik.enable: "true"
+      traefik.port: "5601"
+      traefik.frontend.entryPoints: http,https
+      traefik.frontend.headers.SSLRedirect: "true"
+      traefik.kibana.frontend.rule: Host:vsf-kibana${HOSTNAME_DELIMITER:-.}${ENVIRONMENT_FQDN:-docker.localhost}
+
+  vsf-redis:
+    container_name: vsf-redis
+    image: 'redis:4-alpine'
+    ports:
+      - '6379:6379'
+    networks:
+      - backend
+    labels:
+      traefik.enable: "true"
+      traefik.port: "6379"
+      traefik.frontend.entryPoints: http,https
+      traefik.frontend.headers.SSLRedirect: "true"
+      traefik.redis.frontend.rule: Host:vsf-redis${HOSTNAME_DELIMITER:-.}${ENVIRONMENT_FQDN:-docker.localhost}
+
+  vsf-api:
+    # image: divante/vue-storefront-api:latest
+    container_name: vsf-api
+    build:
+      context: /opt/vsf/vue-storefront-api
+      dockerfile: /opt/vsf/vue-storefront-api/docker/vue-storefront-api/Dockerfile
+#    depends_on:
+#      - vsf-elasticsearch
+#      - vsf-redis
+    env_file: /opt/vsf/vue-storefront-api/docker/vue-storefront-api/default.env
+    environment:
+      VS_ENV: dev
+    volumes:
+      - '/opt/vsf/vue-storefront-api/config:/var/www/config'
+      - '/opt/vsf/vue-storefront-api/ecosystem.json:/var/www/ecosystem.json'
+      - '/opt/vsf/vue-storefront-api/migrations:/var/www/migrations'
+      - '/opt/vsf/vue-storefront-api/package.json:/var/www/package.json'
+      - '/opt/vsf/vue-storefront-api/babel.config.js:/var/www/babel.config.js'
+      - '/opt/vsf/vue-storefront-api/tsconfig.json:/var/www/tsconfig.json'
+      - '/opt/vsf/vue-storefront-api/nodemon.json:/var/www/nodemon.json'
+      - '/opt/vsf/vue-storefront-api/scripts:/var/www/scripts'
+      - '/opt/vsf/vue-storefront-api/src:/var/www/src'
+      - '/opt/vsf/vue-storefront-api/var:/var/www/var'
+    tmpfs:
+      - /var/www/dist
+    #    ports:
+    #      - '8080:8080'
+    networks:
+      - backend
+    labels:
+      traefik.enable: "true"
+      traefik.port: "8080"
+      traefik.frontend.entryPoints: http,https
+      traefik.frontend.headers.SSLRedirect: "true"
+      traefik.api.frontend.rule: Host:vsf-api${HOSTNAME_DELIMITER:-.}${ENVIRONMENT_FQDN:-docker.localhost}
+
+networks:
+  backend:
+    driver: bridge
+  web:
+    driver: bridge
+
+volumes:
+  esdat1:

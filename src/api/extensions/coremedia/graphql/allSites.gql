@@ -1,0 +1,9 @@
+query Sites {
+  content {
+    sites {
+      id
+      name
+      locale
+    }
+  }
+}

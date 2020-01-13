@@ -23,9 +23,24 @@ app.use(morgan('dev'));
 app.use('/media', express.static(path.join(__dirname, config.get(`${config.get('platform')}.assetPath`))))
 
 // 3rd party middleware
-app.use(cors({
-  exposedHeaders: config.get('corsHeaders')
-}));
+// TODO: Changed to support CoreMedia CORS request
+// app.use(cors({
+//   exposedHeaders: config.get('corsHeaders')
+// }));
+let corsOptionsDelegate = function (req, callback) {
+  let corsOptions = {
+    exposedHeaders: config.get('corsHeaders')
+  };
+
+  let origin = req.header('Origin');
+  if (origin) {
+    corsOptions['origin'] = origin;
+    corsOptions['credentials'] = true;
+  }
+
+  callback(null, corsOptions) // callback expects two parameters: error and options
+};
+app.use(cors(corsOptionsDelegate));
 
 app.use(bodyParser.json({
   limit: config.get('bodyLimit')

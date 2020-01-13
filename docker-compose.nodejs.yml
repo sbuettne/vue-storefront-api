@@ -2,6 +2,7 @@ version: '3.0'
 services:
   app:
     # image: divante/vue-storefront-api:latest
+    container_name: vsf-api
     build:
       context: .
       dockerfile: docker/vue-storefront-api/Dockerfile
@@ -24,5 +25,17 @@ services:
       - './var:/var/www/var'
     tmpfs:
       - /var/www/dist
-    ports:
-      - '8080:8080'
+#    ports:
+#      - '8080:8080'
+    networks:
+      - web
+    labels:
+      traefik.enabled: "true"
+      traefik.port: "8080"
+      traefik.frontend.entryPoints: http,https
+      traefik.frontend.headers.SSLRedirect: "true"
+      traefik.api.frontend.rule: Host:vsf-api-${HOSTNAME_DELIMITER:-.}${ENVIRONMENT_FQDN:-docker.localhost}
+
+networks:
+  web:
+    driver: bridge
