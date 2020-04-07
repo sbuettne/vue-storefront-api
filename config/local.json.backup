@@ -172,7 +172,7 @@
   ],
   "extensions": {
     "coremedia": {
-      "apiUrl": "https://headless-server-preview-mz.livecontext.coremedia.com/graphql",
+      "apiUrl": "https://headless-server-preview-mz.cloud.coremedia.io/graphql",
       "previewUrlPattern": "http://localhost:3000"
     },
     "mailchimp": {

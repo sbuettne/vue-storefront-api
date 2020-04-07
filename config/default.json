@@ -156,8 +156,8 @@
     "Link"
   ],
   "corsOrigins": [
-    "https://vsf-store-mz.livecontext.coremedia.com",
-    "https://studio-mz.livecontext.coremedia.com",
+    "https://vsf-store-mz.cloud.coremedia.io",
+    "https://studio-mz.cloud.coremedia.io",
     "http://localhost:3001"
   ],
   "platform": "magento2",
@@ -172,8 +172,8 @@
   ],
   "extensions": {
     "coremedia": {
-      "apiUrl": "https://headless-server-preview-mz.livecontext.coremedia.com/graphql",
-      "previewUrlPattern": "https://vsf-store-mz.livecontext.coremedia.com"
+      "apiUrl": "https://headless-server-preview-mz.cloud.coremedia.io/graphql",
+      "previewUrlPattern": "https://vsf-store-mz.cloud.coremedia.io"
     },
     "mailchimp": {
       "listId": "e06875a7e1",

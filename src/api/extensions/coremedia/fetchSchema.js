@@ -12,7 +12,7 @@ process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = 0;
 
 let host = process.env.HOST;
 if (host === undefined) {
-  host = 'headless-server-preview-mz.livecontext.coremedia.com';
+  host = 'headless-server-preview-mz.cloud.coremedia.io';
 }
 const endpointUrl = 'https://' + host;
 
